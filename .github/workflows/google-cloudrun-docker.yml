@@ -76,6 +76,7 @@ jobs:
           region: '${{ env.REGION }}'
           # NOTE: If using a different source folder, update the image name below:
           source: './app'
+          env_vars: DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
 
       # If required, use the Cloud Run URL output in later steps
       - name: 'Show output'
