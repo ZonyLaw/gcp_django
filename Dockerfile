@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the app code into the container
 COPY . .
 
+# Install Gunicorn for production server
+RUN pip install gunicorn
+
 # Set environment variable for production settings
 ENV DJANGO_SETTINGS_MODULE=myapp.settings.production
 
