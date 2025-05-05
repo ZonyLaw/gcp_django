@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,12 +75,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-import os
-import env
 
-from dotenv import load_dotenv  
 
-load_dotenv()
+#from dotenv import load_dotenv  
+
+#load_dotenv()
 
 database_password = os.getenv('DATABASE_PASSWORD')
 #print(database_password)
@@ -89,7 +90,8 @@ DATABASES = {
         'NAME': 'myproj',
         'USER': 'postgres',
         'PASSWORD': database_password,
-        'HOST': '34.22.254.8',  
+        'HOST': '34.79.79.113',  
+        #'HOST': '/cloudsql/sound-chimera-457618-d7:europe-west1:database1',  
         'PORT': '5432',
     }
     
