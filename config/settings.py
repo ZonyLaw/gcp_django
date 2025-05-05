@@ -85,14 +85,16 @@ database_password = os.getenv('DATABASE_PASSWORD')
 #print(database_password)
 DATABASES = {
     
+    
+        
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'myproj',
         'USER': 'postgres',
         'PASSWORD': database_password,
-        'HOST': '34.79.79.113',  
-        #'HOST': '/cloudsql/sound-chimera-457618-d7:europe-west1:database1',  
+        'HOST': '34.79.11.101',  
         'PORT': '5432',
+        
     }
     
  #   "default": {
