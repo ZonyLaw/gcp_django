@@ -10,17 +10,17 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the app code into the container
-COPY . .
-
 # Install Gunicorn for production server
 RUN pip install gunicorn
 
-# Set environment variable for production settings
+# Copy the rest of the app code into the container
+COPY . .
+
+# Set environment variable for production settings (update the settings module name as per your project structure)
 ENV DJANGO_SETTINGS_MODULE=myapp.settings.production
 
 # Expose the port for Cloud Run (which is 8080 by default)
 EXPOSE 8080
 
-# Run Gunicorn to serve the app
+# Set the command to run the application with Gunicorn
 CMD ["gunicorn", "myapp.wsgi:application", "--bind", "0.0.0.0:8080"]
