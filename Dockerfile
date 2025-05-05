@@ -23,4 +23,6 @@ ENV DJANGO_SETTINGS_MODULE=myapp.settings.production
 EXPOSE 8080
 
 # Set the command to run the application with Gunicorn
-CMD ["gunicorn", "myapp.wsgi:application", "--bind", "0.0.0.0:8080"]
+CMD ["gunicorn", "GCP_DJANGO.wsgi:application", "--bind", "0.0.0.0:8080"]
+
+#CMD python manage.py runserver 0.0.0.0:80
