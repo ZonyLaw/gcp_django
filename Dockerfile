@@ -25,4 +25,6 @@ EXPOSE 8080
 # Set the command to run the application with Gunicorn
 CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8080"]
 
+
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
 #CMD python manage.py runserver 0.0.0.0:80
